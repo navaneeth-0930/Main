@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #FFD700; /* Gold background */
+}
+
+h1, p {
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #000;
+  color: #FFD700;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hero h1, .hero p {
+  opacity: 0; /* Let GSAP animate this */
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* About + Work Section */
+.about-work {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 80px 40px;
+  background-color: #FFD700;
+  color: #000;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.about, .work {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about h2, .work h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.about p, .work ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* If using a list (optional) */
+.work ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.project-highlight {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hover-preview-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  background-color: #000;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: none; /* Hide the default cursor */
+  transition: background 0.3s ease;
+}
+
+.hover-preview-btn:hover {
+  background-color: #222;
+}
+
+/* Preview image on hover */
+.hover-preview-img {
+  position: absolute;
+  top: -120px; /* Above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hover-preview-btn:hover .hover-preview-img {
+  opacity: 1;
+}
+
+/* Description below the button */
+.project-description {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #000;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.contact-me {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-btn {
+  padding: 14px 28px;
+  background-color: #000;
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #222;
+}
+
+#tooltip {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #000;
+  display: none;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 32px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .about-work {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .about, .work {
+    width: 100%;
+  }
+}
